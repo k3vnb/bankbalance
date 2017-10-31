@@ -7,16 +7,11 @@ function AccountSetUp(name, deposit) {
   this.initDeposit = deposit;
   AccountSetUp = 0 + deposit;
 }
-// AccountSetUp.prototype.accountBalance = function() {
-//   this.initDeposit += this.newWithdrawal;
-//   console.log(this.initDeposit);
-// }
 
 function Account(addNewDeposit, addNewWithdrawal) {
     this.newDeposit = addNewDeposit;
     this.newWithdrawal = addNewWithdrawal;
     Account = AccountSetUp + addNewDeposit - addNewWithdrawal;
-    console.log(AccountSetUp);
     return Account;
 }
 
@@ -30,13 +25,13 @@ $(document).ready(function(){
     var initialDeposit = parseInt($(".initialDeposit").val());
     var account = new AccountSetUp(acctName, initialDeposit);
     $(".displayBalance").text("$" + AccountSetUp);
+
     $("#depositForm").submit(function(event){
       event.preventDefault();
       var addNewDeposit = parseInt($(".newDeposit").val());
       var addNewWithdrawal = parseInt($(".newWithdrawal").val());
       var newAccount = new Account(addNewDeposit, addNewWithdrawal);
       $(".displayBalance").text("$" + Account);
-      // alert(account.balanceAccount());
     });//deposit function
   })//newAcc function
 });//end doc rdy
